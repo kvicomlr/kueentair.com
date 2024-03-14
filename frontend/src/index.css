@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f5f3f0;
+}
+
+@layer components {
+  .listContainer {
+    @apply flex justify-center mt-[20px];
+  }
+  .listWrapper {
+    @apply container  flex gap-[20px];
+  }
+  .listSearch {
+    @apply flex-[1] bg-[#febb02] p-[10px] rounded-sm sticky top-[100px] h-max;
+  }
+  .listResult {
+    @apply flex-[3];
+  }
+  .listTitle {
+    @apply text-[16px] text-gray-600 mb-[10px] font-bold;
+  }
+
+  .listItem {
+    @apply flex flex-col gap-[5px] mb-[10px];
+  }
+  .listItemLabel {
+    @apply text-[12px];
+  }
+  .listItemSpan {
+    @apply h-[30px] border-none p-[5px] bg-white flex items-center cursor-pointer;
+  }
+  .listSearchOption {
+    @apply p-[10px];
+  }
+  .listOptionItem {
+    @apply flex justify-between text-[12px] text-gray-600 mb-[10px];
+  }
+  .listOptionInput {
+    @apply w-[50px];
+  }
+  .listSearchBtn {
+    @apply w-full p-[10px] border-none text-white bg-[#0e118a] font-[500] cursor-pointer;
+  }
+  .listItemInput {
+    @apply p-[5px] border-none h-[30px];
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
