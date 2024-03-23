@@ -7,8 +7,8 @@ import {
 
 import Layout from "./layouts/Layout";
 import Home from "./pages/home/Home";
-// import Register from "./pages/Register";
-// import Login from "./pages/Login";
+import Register from "./pages/register/Register";
+import Login from "./pages/login/Login";
 // import List from "./pages/List";
 // import Hotel from "./pages/hotel/Hotel";
 // import Package from "./pages/Package";
@@ -45,22 +45,22 @@ const Kueen = () => {
         /> */}
         {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
 
-        {/* <Route
+        <Route
           path="/register"
           element={
             <Layout>
               <Register />
             </Layout>
           }
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/login"
           element={
             <Layout>
               <Login />
             </Layout>
           }
-        /> */}
+        />
 
         {/* <Route
           path="/dashboard"

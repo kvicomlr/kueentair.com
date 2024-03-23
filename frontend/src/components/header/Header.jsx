@@ -1,12 +1,31 @@
 import { useState } from "react";
 import Logo from "../../assets/images/logo.png";
 import { BiMenu, BiX } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Nav from "./Nav";
+import { useDispatch, useSelector } from "react-redux";
+import { useLogoutMutation } from "../../features/auth/authsSlice";
+import { logout } from "../../features/users/userSlice";
 const Header = () => {
-  //Open and close state of the Navbar & sub menu itemsS
+  //Open and close state of the Navbar & sub menu items
   const [open, setOpen] = useState(false);
 
+  const { userInfo } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [logoutApiCall] = useLogoutMutation();
+
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <header className="z-102 lg:sticky lg:top-0 bg-[#0e118a]  lg:bg-[#f5f3f0] px-7">
       {/* Main Navbar starts here */}
@@ -34,10 +53,34 @@ const Header = () => {
             {open ? <BiX /> : <BiMenu />}
           </div>
         </div>
-
-        <div className="hidden lg:flex b">
+        <div className="hidden lg:flex">
           <Nav />
         </div>
+        {userInfo ? (
+          <>
+            <div className="lg:flex  items-center lg:space-x-4 text-white lg:text-[#0e118a] hidden">
+              <NavLink to="/profile">
+                <h1 className="pb-4 lg:pb-0 font-bold">Account</h1>
+              </NavLink>
+              <NavLink onClick={logoutHandler}>
+                <h1 className="pb-4 lg:pb-0 font-bold">Logout</h1>
+              </NavLink>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="hidden lg:flex ">
+              <div className="lg:flex  items-center lg:space-x-4 text-white lg:text-[#0e118a] ">
+                <NavLink to="/login">
+                  <h1 className="pb-4 lg:pb-0 font-bold">Login</h1>
+                </NavLink>
+                <NavLink to="/register">
+                  <h1 className="pb-4 lg:pb-0 font-bold">Register</h1>
+                </NavLink>
+              </div>
+            </div>
+          </>
+        )}
       </div>
       {/* Main Navbar ends here */}
 
@@ -47,6 +90,32 @@ const Header = () => {
                     duration-500 ${open ? "left-0" : "left-[-100%]"}`}
       >
         <Nav />
+
+        {userInfo ? (
+          <>
+            <div className="lg:flex  items-center lg:space-x-4 text-white lg:text-[#0e118a] ">
+              <NavLink to="/profile">
+                <h1 className="pb-4 lg:pb-0 font-bold">Account</h1>
+              </NavLink>
+              <NavLink onClick={logoutHandler}>
+                <h1 className="pb-4 lg:pb-0 font-bold">Logout</h1>
+              </NavLink>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="hidden lg:flex ">
+              <div className="lg:flex  items-center lg:space-x-4 text-white lg:text-[#0e118a] ">
+                <NavLink to="/login">
+                  <h1 className="pb-4 lg:pb-0 font-bold">Login</h1>
+                </NavLink>
+                <NavLink to="/register">
+                  <h1 className="pb-4 lg:pb-0 font-bold">Register</h1>
+                </NavLink>
+              </div>
+            </div>
+          </>
+        )}
       </ul>
 
       {/* Mobile nav ends here */}

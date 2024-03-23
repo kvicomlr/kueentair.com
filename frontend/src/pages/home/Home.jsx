@@ -1,19 +1,19 @@
+import Hero from "../../components/hero/Hero";
 // import LatestDestinationCard from "../components/LastestDestinationCard";
-// import Heading from "../components/heading/Heading";
-// import Hero from "../components/hero/Hero";
-// import PackageOne from "../components/holiday/PackageOne";
-// import PackageTwo from "../components/holiday/PackageTwo";
-// import PackageThree from "../components/holiday/PackageThree";
-// import Experience from "../components/experience/Experience";
-// import { holiday } from "../data/DataSource";
-// import Payment from "../components/sps/Payment";
-// import Ads from "../components/ads/Ads";
-// import hotel1 from "../assets/images/ads/hotel1.png";
-// import hotel2 from "../assets/images/ads/hotel2.png";
+import Heading from "../../components/heading/Heading";
+import PackageOne from "../../components/holiday/PackageOne";
+import PackageTwo from "../../components/holiday/PackageTwo";
+import PackageThree from "../../components/holiday/PackageThree";
+import Experience from "../../components/experience/Experience";
+import { holiday } from "../../data/DataSource";
+import Payment from "../../components/sps/Payment";
+import Ads from "../../components/ads/Ads";
+import hotel1 from "../../assets/images/ads/hotel1.png";
+import hotel2 from "../../assets/images/ads/hotel2.png";
+
 const Home = () => {
   return (
-    <>
-      {/* <div className="">
+    <div className="">
       <Hero />
 
       <Heading title="Holiday Packages" btn="Customize trip" />
@@ -33,15 +33,14 @@ const Home = () => {
           <div>
             <Ads price="8.99" title="Dubai Islamic Hostel" image={hotel2} />
           </div>
-       <div>
+          {/* <div>
             <Ads price="8.99" title="Dubai Islamic Hostel" image={hotel2} />
-          </div> 
+          </div> */}
         </div>
       </div>
       <Heading title="My Experience" btn="Share your experience" />
       <Experience />
-    </div> */}
-    </>
+    </div>
   );
 };
 

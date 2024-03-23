@@ -17,6 +17,9 @@ export default {
         md: "10rem",
       },
     },
+    backgroundImage: {
+      Hero: "url('https://app.1lives.us/wp-content/uploads/2024/02/mbg.jpg')",
+    },
   },
   plugins: [],
 };

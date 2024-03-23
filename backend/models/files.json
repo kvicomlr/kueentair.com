@@ -1,0 +1,55 @@
+[
+  {
+    "id": "2",
+    "name": "Aminat Oyiza Suleiman",
+    "role": "Co-Founder",
+    "profession": "Material Scientist",
+    "education": "PHD, Material Science"
+  },
+  {
+    "id": "1",
+    "name": "Jamielatou Barry",
+    "role": "Co-Founder",
+    "profession": "Nurse",
+    "education": "Diploma, Nursing"
+  },
+  {
+    "id": "67",
+    "name": "Mohammed Seyeh Kanneh",
+    "role": "Founder",
+    "profession": "Computer Software Engineer",
+    "education": "BBEng, Computer Engineering"
+  },
+  {
+    "name": "The Grand at Trafalgar Square",
+    "type": "hotel",
+    "city": "London",
+    "address": "8 Northumberland Avenue, Westminster Borough, London, WC2N 5BY, United Kingdom",
+    "distance": "500",
+    "title": "Best hotel in the city",
+    "cheapestPrice": 100
+  },
+  {
+    "email": "abu@kueentair.com",
+    "password": "99999999"
+  },
+  {
+    "email": "aos@kueentair.com",
+    "password": "963852741",
+    "confirmPassword": "963852741",
+    "firstName": "aos@kueentair.com",
+    "lastName": "S"
+  },
+  {
+    "email": "khadija@kvilr.com",
+    "password": "963852741",
+    "confirmPassword": "963852741",
+    "firstName": "Khadija Mohammed",
+    "lastName": "Kanneh"
+  },
+  {
+    "currentPWD": "963852741",
+    "password": "963852741",
+    "confirmPassword": "963852741"
+  }
+]
